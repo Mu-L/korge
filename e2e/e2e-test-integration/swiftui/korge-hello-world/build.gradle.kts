@@ -25,22 +25,32 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-            implementation(libs.korge.engine)
-            implementation(libs.kotlinx.serialization.json)
-            implementation(libs.korlibs.image)
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.korge.engine)
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.korlibs.image)
+            }
         }
         
         val iosMain by creating {
-            dependsOn(commonMain.get())
+            dependsOn(commonMain)
             dependencies {
                 api(libs.korlibs.image)
             }
         }
         
-        iosX64Main.dependsOn(iosMain)
-        iosArm64Main.dependsOn(iosMain)
-        iosSimulatorArm64Main.dependsOn(iosMain)
+        val iosX64Main by getting {
+            dependsOn(iosMain)
+        }
+        
+        val iosArm64Main by getting {
+            dependsOn(iosMain)
+        }
+        
+        val iosSimulatorArm64Main by getting {
+            dependsOn(iosMain)
+        }
     }
 }
 
