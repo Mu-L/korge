@@ -8,9 +8,9 @@ plugins {
 
 kotlin {
     val iosTargets = listOf(
-        iosX64(),
+//        iosX64(),
         iosArm64(),
-        iosSimulatorArm64(),
+        iosSimulatorArm64()
     )
 
     // Optionally add more targets
@@ -42,18 +42,18 @@ kotlin {
             }
         }
         
-        val iosX64Main by getting {
-            dependsOn(iosMain)
-        }
+//        val iosX64Main by getting {
+//            dependsOn(iosMain)
+//        }
         
         val iosArm64Main by getting {
             dependsOn(iosMain)
         }
-        
+
         val iosSimulatorArm64Main by getting {
             dependsOn(iosMain)
         }
-        
+
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
