@@ -21,6 +21,8 @@ kotlin {
             baseName = "GameMain"
             xcf.add(this)
             export(libs.korlibs.image)
+            isStatic = true
+            linkerOpts("-lc++")
         }
     }
 
