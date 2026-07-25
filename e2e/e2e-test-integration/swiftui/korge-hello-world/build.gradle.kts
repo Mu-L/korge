@@ -30,6 +30,17 @@ kotlin {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.korlibs.image)
         }
+        
+        val iosMain by creating {
+            dependsOn(commonMain.get())
+            dependencies {
+                api(libs.korlibs.image)
+            }
+        }
+        
+        iosX64Main.dependsOn(iosMain)
+        iosArm64Main.dependsOn(iosMain)
+        iosSimulatorArm64Main.dependsOn(iosMain)
     }
 }
 
