@@ -190,7 +190,7 @@ jobs:
 
   e2e-macos-swiftui:
     timeout-minutes: 120
-    runs-on: macos-latest-xl
+    runs-on: macos-26-intel
     env:
       DISABLE_KOTLIN_NATIVE: false
       DISABLE_ANDROID: true
@@ -211,7 +211,7 @@ jobs:
       - name: Run e2e SwiftUI integration
         run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world build"
       - name: Build Korge iOS simulator framework
-        run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world linkDebugFrameworkIosSimulatorArm64"
+        run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world linkDebugFrameworkIosX64"
 # TODO: This is failing in CI -- someone with MacOS HW has to fix this
       - name: Build SwiftUI Xcode integration project
         run: |
