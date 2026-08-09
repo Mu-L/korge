@@ -12,7 +12,6 @@ kotlin {
         iosArm64(),
         iosSimulatorArm64()
     )
-
     // Optionally add more targets
 
     val xcf = XCFramework("ios")
@@ -27,6 +26,18 @@ kotlin {
     }
 
     sourceSets {
+        commonMain.dependencies {
+            implementation(libs.korge.engine)
+            implementation(libs.kotlinx.serialization.json)
+            implementation(libs.korlibs.image)
+        }
+
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.korge.engine)
+        }
+
+/*
         val commonMain by getting {
             dependencies {
                 implementation(libs.korge.engine)
@@ -34,7 +45,7 @@ kotlin {
                 implementation(libs.korlibs.image)
             }
         }
-        
+
         val iosMain by creating {
             dependsOn(commonMain)
             dependencies {
@@ -60,6 +71,7 @@ kotlin {
                 implementation(libs.korge.engine)
             }
         }
+*/
     }
 }
 
