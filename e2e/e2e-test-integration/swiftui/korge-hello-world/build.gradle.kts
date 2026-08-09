@@ -32,6 +32,11 @@ kotlin {
             implementation(libs.korlibs.image)
         }
 
+        iosMain.dependencies {
+            implementation(libs.korge.engine)
+            implementation(libs.korlibs.image)
+        }
+
         commonTest.dependencies {
             implementation(kotlin("test"))
             implementation(libs.korge.engine)
