@@ -75,7 +75,7 @@ korge {
 
 // To selectively enable targets
 	
-	targetJvm()
-	targetJs()
-	targetAndroid()
+//	targetJvm()
+//	targetJs()
+//	targetAndroid()
 }
