@@ -14,7 +14,7 @@ on:
       - '**'
       - '!**.gitignore'
       - '!**.md'
-#      - '!**.github/workflows/*'
+      - '!**.github/workflows/*'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -190,7 +190,7 @@ jobs:
 
   e2e-macos-swiftui:
     timeout-minutes: 120
-    runs-on: macos-latest-xlarge  # arm64 (M1/M2/M3, recommended for better performance)
+    runs-on: macos-latest-xl
     env:
       DISABLE_KOTLIN_NATIVE: false
       DISABLE_ANDROID: true
