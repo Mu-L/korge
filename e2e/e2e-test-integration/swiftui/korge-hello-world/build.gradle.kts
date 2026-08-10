@@ -34,7 +34,7 @@ kotlin {
 
         iosMain.dependencies {
             implementation(libs.korge.engine)
-            implementation(libs.korlibs.image)
+            api(libs.korlibs.image)
         }
 
         iosX64Main.dependencies {
