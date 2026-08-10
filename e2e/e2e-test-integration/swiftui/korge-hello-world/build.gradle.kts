@@ -37,46 +37,58 @@ kotlin {
             implementation(libs.korlibs.image)
         }
 
+        iosX64Main.dependencies {
+            implementation(libs.korlibs.image)
+        }
+
+        iosArm64Main.dependencies {
+            implementation(libs.korlibs.image)
+        }
+
+        iosSimulatorArm64Main.dependencies {
+            implementation(libs.korlibs.image)
+        }
+
         commonTest.dependencies {
             implementation(kotlin("test"))
             implementation(libs.korge.engine)
         }
 
-/*
-        val commonMain by getting {
-            dependencies {
-                implementation(libs.korge.engine)
-                implementation(libs.kotlinx.serialization.json)
-                implementation(libs.korlibs.image)
-            }
-        }
+        /*
+                val commonMain by getting {
+                    dependencies {
+                        implementation(libs.korge.engine)
+                        implementation(libs.kotlinx.serialization.json)
+                        implementation(libs.korlibs.image)
+                    }
+                }
 
-        val iosMain by creating {
-            dependsOn(commonMain)
-            dependencies {
-                api(libs.korlibs.image)
-            }
-        }
-        
-        val iosX64Main by getting {
-            dependsOn(iosMain)
-        }
-        
-        val iosArm64Main by getting {
-            dependsOn(iosMain)
-        }
+                val iosMain by creating {
+                    dependsOn(commonMain)
+                    dependencies {
+                        api(libs.korlibs.image)
+                    }
+                }
 
-        val iosSimulatorArm64Main by getting {
-            dependsOn(iosMain)
-        }
+                val iosX64Main by getting {
+                    dependsOn(iosMain)
+                }
 
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(libs.korge.engine)
-            }
-        }
-*/
+                val iosArm64Main by getting {
+                    dependsOn(iosMain)
+                }
+
+                val iosSimulatorArm64Main by getting {
+                    dependsOn(iosMain)
+                }
+
+                val commonTest by getting {
+                    dependencies {
+                        implementation(kotlin("test"))
+                        implementation(libs.korge.engine)
+                    }
+                }
+        */
     }
 }
 
