@@ -208,7 +208,7 @@ jobs:
             publishToMavenLocal \
             :korge-gradle-plugin:publishToMavenLocal
       - name: Run e2e SwiftUI integration
-        run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world build"
+        run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world check"
       - name: Build Korge iOS simulator framework
         run: "./gradlew -p e2e/e2e-test-integration/swiftui/korge-hello-world linkDebugFrameworkIosSimulatorArm64"
       - name: Build SwiftUI Xcode integration project
